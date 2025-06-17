@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shipping Calculator</title>
+</head>
+<body>
+  <h1>Shipping Calculator</h1>
+
+  <label for="weight">Weight (kg):</label>
+  <input type="number" id="weight" /><br/><br/>
+
+  <label for="distance">Distance (km):</label>
+  <input type="number" id="distance" /><br/><br/>
+
+  <button onclick="calculateShipping()">Calculate</button>
+
+  <h2 id="result"></h2>
+
+  <script>
+    function calculateShipping() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const distance = parseFloat(document.getElementById('distance').value);
+
+      if (isNaN(weight) || isNaN(distance) || weight <= 0 || distance <= 0) {
+        document.getElementById('result').textContent = 'Please enter valid weight and distance.';
+        return;
+      }
+
+      const baseRate = 5; // flat fee
+      const weightRate = 0.8; // per kg
+      const distanceRate = 0.5; // per km
+
+      const cost = baseRate + (weightRate * weight) + (distanceRate * distance);
+      document.getElementById('result').textContent = `Estimated Shipping Cost: $${cost.toFixed(2)}`;
+    }
+  </script>
+</body>
+</html>
