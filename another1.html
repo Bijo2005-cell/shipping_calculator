@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<head>
+        <title> Homestay</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Animate.css -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        .banner {
+            background: url('https://via.placeholder.com/1920x600') no-repeat center;
+            background-size: cover;
+            height: 600px;
+            color: white;
+        }
+        /* 3D Card Effect */
+        .card {
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            perspective: 1000px;
+        }
+        .card:hover {
+            transform: rotateY(10deg) rotateX(10deg) scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .card-img-top {
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-img-top {
+            transform: translateZ(20px); /* 3D pop-out effect */
+        }
+        /* Chatbot */
+        .chatbot {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .chatbot:hover {
+            transform: scale(1.1) rotate(360deg); /* Spin animation */
+        }
+        /* Fade-in on scroll */
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#"> Homestay</a>
+            <div class="ms-auto">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#rooms">Rooms</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">about</a>
+                    </li>
+                    </ul>
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle animate__animated animate__pulse animate__infinite" type="button" data-bs-toggle="dropdown">
+                        Login
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#">Admin Login</a></li>
+                        <li><a class="dropdown-item" href="#">Employee Login</a></li>
+                        <li><a class="dropdown-item" href="#">Customer Login</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <section class="banner d-flex align-items-center animate__animated animate__fadeIn">
+        <div class="container text-center">
+            <h1 class="display-4 animate__animated animate__bounceInDown">Welcome to  Homestay</h1>
+            <p class="lead animate__animated animate__fadeInUp animate__delay-1s">Experience comfort and nature in perfect harmony</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="py-5 animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Book Your Stay</h2>
+            <form class="row g-3">
+                <div class="col-md-3">
+                    <input type="date" class="form-control" placeholder="Check-in">
+                </div>
+                <div class="col-md-3">
+                    <input type="date" class="form-control" placeholder="Check-out">
+                </div>
+                <div class="col-md-3">
+                    <select class="form-select">
+                        <option>Guests</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3+</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <button type="submit" class="btn btn-primary w-100 animate__animated animate__pulse animate__infinite">Book Now</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Best Selling Rooms -->
+    <section class="py-5 bg-light animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Best Selling Rooms</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="Deluxe Suite">
+                        <div class="card-body">
+                            <h5 class="card-title">Deluxe Suite</h5>
+                            <p class="card-text">3000 RS/night</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                <div class="card">
+                        <img src="" class="card-img-top" alt="Ocean View">
+                        <div class="card-body">
+                            <h5 class="card-title">Dam View room</h5>
+                            <p class="card-text">4000 RS/night</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                            <img src="" class="card-img-top" alt="Ocean View">
+                            <div class="card-body">
+                                <h5 class="card-title">AC room</h5>
+                                <p class="card-text">2500 RS/night</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Limited Time Offers -->
+    <section class="py-5 animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Limited Time Offers</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="Balcony room ">
+                        <div class="card-body">
+                            <h5 class="card-title">Balcony room</h5>
+                            <p class="card-text">20% off</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt="Balcony room with AC ">
+                        <div class="card-body">
+                            <h5 class="card-title">Balcony room with AC</h5>
+                            <p class="card-text">10% off+ free food</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" class="card-img-top" alt=" Outdoor tent">
+                        <div class="card-body">
+                            <h5 class="card-title">Outdoor tent</h5>
+                            <p class="card-text">50% off</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Packages and Events -->
+    <section class="py-5 bg-light animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Packages & Events</h2>
+            <div class="row">
+                 <div class="col-md-4">
+                    <div class="card">
+                        <h4>Weekend Package</h4>
+                    <p>2 nights + breakfast - $250</p>
+                </div>
+                <!-- Add more packages -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="py-5 animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Our Services</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Free Wi-Fi</li>
+                <li class="list-group-item">Swimming Pool</li>
+                <li class="list-group-item">24/7 Room Service</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Customer Experience -->
+    <section class="py-5 bg-light animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">What Our Guests Say</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <blockquote class="blockquote">
+                        <p>"Amazing experience!"</p>
+                        <footer class="blockquote-footer">John Doe</footer>
+                    </blockquote>
+                </div>
+                <!-- Add more testimonials -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="py-5 animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Blog</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Top 5 Local Attractions</h5>
+                            <p class="card-text">Discover nearby wonders...</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more blog posts -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map -->
+    <section class="py-5 bg-light animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <h2 class="text-center mb-4">Find Us</h2>
+            <iframe src="" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- AI Chatbot -->
+    <div class="chatbot animate__animated animate__bounceIn" onclick="alert('Hello! How can I assist you today?')">
+        <i class="bi bi-chat-dots"></i> Chat
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 animate-on-scroll" data-animation="fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Explore</h5>
+                    <a href="#" class="text-white">Rooms</a><br>
+                    <a href="#" class="text-white">Packages</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>About</h5>
+                    <a href="#" class="text-white">Our Story</a><br>
+                    <a href="#" class="text-white">Team</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <a href="#" class="text-white">Email Us</a><br>
+                    <a href="#" class="text-white">Call Us</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Legal</h5>
+                    <a href="#" class="text-white">Terms</a><br>
+                    <a href="#" class="text-white">Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scroll Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            elements.forEach(el => {
+                el.style.transform = 'translateY(50px)';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
